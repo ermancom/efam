@@ -1,4 +1,4 @@
-import { ResultCode } from "./resultCode";
+import { ResultCode } from "./result-code";
 
 export default class Result {
     isError: boolean;
