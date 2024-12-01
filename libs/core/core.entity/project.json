@@ -1,0 +1,37 @@
+{
+  "name": "core.entity",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/core/core.entity/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/core/core.entity/src/index.ts",
+        "outputPath": "dist/libs/core/core.entity",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/core/core.entity/tsconfig.lib.json",
+        "platform": "node",
+        "format": ["esm"],
+        "assets": [
+          {
+            "glob": "libs/core/core.entity/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}
